@@ -7,14 +7,14 @@ random.seed(100)
 # Ejemplo 1:
 X1 = np.array([[-2,4,-1],[4,1,-1],[1, 6, -1],[2, 4, -1],[6, 2, -1],])
 Y1 = np.array([-1,-1,1,1,1])
-#w1,errors1 = svm_sgd(X1,Y1)
-#svm_sgd_plot(X1,Y1,w1,errors1)
+w1,errors1 = svm_sgd(X1,Y1)
+svm_sgd_plot(X1,Y1,w1,errors1)
 
 # Ejemplo 2:
 X2 = np.array([[1,2,-1],[3,4,-1],[2,6,-1],[1,-5,-1],[-2,3,-1],[5,-5,-1],[-6,1,-1],[8,3,-1],[2,2,-1],[2,-3,-1],[-4,-1,-1],[0,2,-1]])
 Y2 = np.array([1,1,1,-1,1,-1,-1,1,1,-1,-1,1])
-#w2,errors2 = svm_sgd(X2,Y2)
-#svm_sgd_plot(X2,Y2,w2,errors2)
+w2,errors2 = svm_sgd(X2,Y2)
+svm_sgd_plot(X2,Y2,w2,errors2)
 
 # Ejemplo 3 (Generación automática de puntos):
 n = 15# Cantidad de puntos
