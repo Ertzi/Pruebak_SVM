@@ -45,7 +45,7 @@ model3 = SVC(C = 3)
 #model3.fit(X_train,Y_train)
 #print(f"Model C=3 score: {model3.score(X_test,Y_test)}")
 
-model4 = SVC(C = 4,max_iter=1) # OPTIMAL
+model4 = SVC(C = 4) # OPTIMAL
 model4.fit(X_train,Y_train)
 print(f"Model C=4 score: {model4.score(X_test,Y_test)}")
 
@@ -76,13 +76,13 @@ model10 = SVC(C = 10)
 
 # LINEAR SVM
 linear_model = LinearSVC(C = 4,max_iter=1)
-linear_model.fit(X_train,Y_train)
-print(f"Linear model score: {linear_model.score(X_test,Y_test)}")
+#linear_model.fit(X_train,Y_train)
+#print(f"Linear model score: {linear_model.score(X_test,Y_test)}")
 
 # LINEAR KERNEL SVM
 linear_kernel = SVC(C = 4,kernel="linear")
-linear_kernel.fit(X_train,Y_train)
-print(f"Linear kernel score: {linear_kernel.score(X_test,Y_test)}")
+#linear_kernel.fit(X_train,Y_train)
+#print(f"Linear kernel score: {linear_kernel.score(X_test,Y_test)}")
 
 # CONFUSION MATRIX:
 fig, ax = plt.subplots(figsize=(10, 5))
@@ -92,17 +92,17 @@ ax.xaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
 ax.yaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
 plt.show()
 
-fig, ax = plt.subplots(figsize=(10, 5))
-linear_predict = linear_model.predict(X_test)
-ConfusionMatrixDisplay.from_predictions(Y_test, linear_predict, ax=ax)
-ax.xaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
-ax.yaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
-plt.show()
+#fig, ax = plt.subplots(figsize=(10, 5))
+#linear_predict = linear_model.predict(X_test)
+#ConfusionMatrixDisplay.from_predictions(Y_test, linear_predict, ax=ax)
+#ax.xaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
+#ax.yaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
+#plt.show()
 
-fig, ax = plt.subplots(figsize=(10, 5))
-linear_kernel_predict = linear_kernel.predict(X_test)
-ConfusionMatrixDisplay.from_predictions(Y_test, linear_kernel_predict, ax=ax)
-ax.xaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
-ax.yaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
-plt.show()
+#fig, ax = plt.subplots(figsize=(10, 5))
+#linear_kernel_predict = linear_kernel.predict(X_test)
+#ConfusionMatrixDisplay.from_predictions(Y_test, linear_kernel_predict, ax=ax)
+#ax.xaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
+#ax.yaxis.set_ticklabels(["0","1","2","3","4","5","6","7","8","9"])
+#plt.show()
 
