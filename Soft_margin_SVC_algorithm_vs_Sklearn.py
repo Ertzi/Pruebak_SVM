@@ -77,7 +77,7 @@ class SoftMarginSVM:
         return np.dot(self.alphas * self.y, [linear_kernel(x, xi) for xi in self.X]) + self.b
 
 # EJEMPLO 1
-if False:
+if True:
     # Crear un conjunto de datos de ejemplo
     X = np.array([[3, 3], [4, 4], [1, 1], [2, 2]])
     y = np.array([1, 1, -1, -1])
@@ -107,8 +107,16 @@ if False:
     plt.legend()
     plt.show()
 
+    model = LinearSVC()
+    model.fit(X,y)
+    disp = DecisionBoundaryDisplay.from_estimator(
+    model, X, response_method="predict", xlabel="x", ylabel="y",alpha=0.5)
+    disp.ax_.scatter(X[:, 0], X[:, 1], c=y, edgecolor="k")
+    plt.show()
+
+
 # EJEMPLO 2:
-if False:
+if True:
     # Datos
     X = np.array([[2, 2], [2, 3], [3, 3], [3, 4], [4, 4], [4, 5]])
     y = np.array([1, 1, 1, -1, -1, -1])
@@ -134,8 +142,15 @@ if False:
     plt.legend()
     plt.show()
 
+    model = LinearSVC()
+    model.fit(X,y)
+    disp = DecisionBoundaryDisplay.from_estimator(
+    model, X, response_method="predict", xlabel="x", ylabel="y",alpha=0.5)
+    disp.ax_.scatter(X[:, 0], X[:, 1], c=y, edgecolor="k")
+    plt.show()
+
 # EJEMPLO 3:
-if False:
+if True:
     # Datos
     X = np.array([[1, 1], [2, 2], [2, 3], [4, 4], [5, 5], [5, 6]])
     y = np.array([1, -1, 1, 1, -1, -1])
@@ -159,6 +174,13 @@ if False:
     plt.xlabel('X1')
     plt.ylabel('X2')
     plt.legend()
+    plt.show()
+
+    model = LinearSVC()
+    model.fit(X,y)
+    disp = DecisionBoundaryDisplay.from_estimator(
+    model, X, response_method="predict", xlabel="x", ylabel="y",alpha=0.5)
+    disp.ax_.scatter(X[:, 0], X[:, 1], c=y, edgecolor="k")
     plt.show()
 
 # Ejemplo con 30 puntos
@@ -204,7 +226,7 @@ if True:
 
 # GENERAR UN MODELO CON SKLEARN (LinearSVC)
 
-if True:
+if False:
     # Generar un conjunto de datos aleatorio en 3D
     np.random.seed(0)
     X = np.random.randn(100, 3)
@@ -243,7 +265,7 @@ if True:
 
 # GENERAR UN MODELO CON SKLEARN (SVC(kernel= "linear"))
 
-if True:
+if False:
     # Generar un conjunto de datos aleatorio en 3D
     np.random.seed(0)
     X = np.random.randn(100, 3)
